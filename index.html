@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Download Center</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/plugins/fontawesome-free/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css"
+    />
+
+    <style>
+      body {
+        background: #f4f6f9;
+      }
+
+      .card {
+        border-radius: 12px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .download-btn {
+        border-radius: 20px;
+        padding: 5px 18px;
+      }
+    </style>
+  </head>
+
+  <body class="hold-transition layout-top-nav">
+    <div class="wrapper">
+      <nav class="main-header navbar navbar-dark navbar-primary">
+        <div class="container">
+          <span class="navbar-brand">
+            <i class="fas fa-download"></i>
+
+            Software Download Center
+          </span>
+        </div>
+      </nav>
+
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="container mt-4">
+            <div class="card">
+              <div class="card-header bg-primary">Software List</div>
+
+              <div class="card-body">
+                <table
+                  id="table"
+                  class="table table-hover table-striped table-bordered"
+                >
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Category</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Download</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="softwareTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="main-footer text-center">Software Center 2026</footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+      /* ===========================
+      DATA SOFTWARE
+      =========================== */
+
+      var softwareList = [
+        //Operating sistem
+        {
+          category: "OS",
+          name: "Ubuntu",
+          description: "Linux Desktop & Server",
+          link: "https://ubuntu.com/download",
+          badge: "primary",
+        },
+
+        {
+          category: "OS",
+          name: "Debian",
+          description: "Stable Linux Server",
+          link: "https://debian.org",
+          badge: "primary",
+        },
+
+        //Development
+        {
+          category: "Development",
+          name: "Visual Studio Code",
+          description: "Code Editor",
+          link: "https://code.visualstudio.com",
+          badge: "warning",
+        },
+
+        //Database
+        {
+          category: "Database",
+          name: "DBeaver",
+          description: "Database Client",
+          link: "https://dbeaver.io",
+          badge: "info",
+        },
+
+        {
+          category: "Server",
+          name: "Docker",
+          description: "Container Platform",
+          link: "https://docker.com",
+          badge: "success",
+        },
+
+        //Office
+        {
+          category: "Office",
+          name: "LibreOffice",
+          description: "Office Suite",
+          link: "https://libreoffice.org",
+          badge: "danger",
+        },
+
+        //Application Other
+        {
+          category: "Apps Other",
+          name: "HWmonitor",
+          description: "Office Suite",
+          link: "https://libreoffice.org",
+          badge: "secondary",
+        },
+        {
+          category: "Apps Other",
+          name: "INSTALLERMASERP.zip",
+          description: "Installer MASERP",
+          link: "https://mega.nz/file/rRMnnIQL#nHcomFTf83p_dMFX-7lojD-xFTuBizlMiO1UqkugB34",
+          badge: "secondary",
+        },
+      ];
+
+      /* ===========================
+      LOOPING
+      =========================== */
+
+      var html = "";
+
+      softwareList.forEach(function (item, index) {
+        html += `
+
+      <tr>
+
+      <td>${index + 1}</td>
+
+      <td>
+      <span class="badge badge-${item.badge}">
+      ${item.category}
+      </span>
+      </td>
+
+      <td>${item.name}</td>
+
+      <td>${item.description}</td>
+
+      <td>
+
+      <a href="${item.link}" target="_blank"
+      class="btn btn-success btn-sm download-btn">
+
+      <i class="fas fa-download"></i>
+
+      Download
+
+      </a>
+
+      </td>
+
+      </tr>
+
+      `;
+      });
+
+      document.getElementById("softwareTable").innerHTML = html;
+
+      /* ===========================
+      DATATABLE
+      =========================== */
+
+      $(function () {
+        $("#table").DataTable();
+      });
+    </script>
+  </body>
+</html>
