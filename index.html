@@ -5,9 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
-      .badge-linkapps {
-        background-color: #8d70c1;
-        color: white;
+      /* ===========================
+            DATATABLE TOOLBAR
+        =========================== */
+
+      .dataTables_wrapper .dataTables-top {
+        width: 100%;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+        min-height: 32px;
+      }
+
+      /* ===========================
+          LEFT : SHOW + CATEGORY
+        =========================== */
+
+      .dataTables_wrapper .dataTables-left {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .dataTables_wrapper .dataTables-length {
+        margin: 0 !important;
+      }
+
+      /* DataTables "Show 10 entries" */
+      .dataTables_wrapper .dataTables_length {
+        margin: 0 !important;
+        padding: 0 !important;
+        float: none !important;
+      }
+
+      .dataTables_wrapper .dataTables_length label {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 32px;
+      }
+
+      /* Select Show 10 */
+      .dataTables_wrapper .dataTables_length select {
+        height: 32px !important;
+        margin: 0 !important;
+        padding: 2px 8px !important;
+        width: 55px !important;
+      }
+
+      /* ===========================
+          CATEGORY
+        =========================== */
+
+      .dataTables_wrapper .category-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 32px;
+      }
+
+      .dataTables_wrapper #categoryFilter {
+        width: 130px !important;
+        height: 32px !important;
+
+        margin: 0 !important;
+        padding: 2px 8px !important;
+
+        display: block !important;
+      }
+
+      /* ===========================
+            RIGHT : SEARCH
+        =========================== */
+
+      .dataTables_wrapper .dataTables-right {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .dataTables_wrapper .dataTables_filter {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        float: none !important;
+      }
+
+      .dataTables_wrapper .dataTables_filter label {
+        display: flex !important;
+        align-items: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        height: 32px;
+      }
+
+      .dataTables_wrapper .dataTables_filter input {
+        height: 32px !important;
+
+        margin: 0 0 0 5px !important;
+        padding: 4px 8px !important;
+
+        box-sizing: border-box;
       }
     </style>
 
@@ -690,9 +801,9 @@
         //data tabel
         var table = $("#table").DataTable({
           dom:
-            '<"row align-items-center"' +
-            '<"col-sm-8 d-flex align-items-center"l<"category-wrapper ml-2">>' +
-            '<"col-sm-4 text-right"f>' +
+            '<"dataTables-top"' +
+            '<"dataTables-left"l<"category-wrapper">>' +
+            '<"dataTables-right"f>' +
             ">" +
             "rtip",
         });
@@ -711,9 +822,7 @@
 
         //dropdwon filter
         var categorySelect = $(
-          '<select id="categoryFilter" ' +
-            'class="form-control form-control-sm" ' +
-            'style="width: 130px; display:inline-block;">' +
+          '<select id="categoryFilter" class="form-control form-control-sm">' +
             '<option value="">All Categories</option>' +
             "</select>",
         );
