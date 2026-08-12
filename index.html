@@ -627,6 +627,22 @@
       LOOPING
       =========================== */
 
+      //sort by category > name
+
+      softwareList.sort(function (a, b) {
+        // Urutkan berdasarkan Category
+        var categoryCompare = a.category.localeCompare(b.category, undefined, {
+          sensitivity: "base",
+        });
+
+        //jika category sama, urutkan berdasarkan name
+        if (categoryCompare !== 0) {
+          return categoryCompare;
+        }
+
+        return a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
+      });
+
       var html = "";
 
       softwareList.forEach(function (item, index) {
