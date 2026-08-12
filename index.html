@@ -664,7 +664,56 @@
       =========================== */
 
       $(function () {
-        $("#table").DataTable();
+        //data tabel
+        var table = $("#table").DataTable({
+          dom:
+            '<"row align-items-center"' +
+            '<"col-sm-8 d-flex align-items-center"l<"category-wrapper ml-2">>' +
+            '<"col-sm-4 text-right"f>' +
+            ">" +
+            "rtip",
+        });
+
+        //category filter
+        var categories = [];
+
+        softwareList.forEach(function (item) {
+          if (!categories.includes(item.category)) {
+            categories.push(item.category);
+          }
+        });
+
+        //urutkan category
+        categories.sort();
+
+        //dropdwon filter
+        var categorySelect = $(
+          '<select id="categoryFilter" ' +
+            'class="form-control form-control-sm" ' +
+            'style="width: 130px; display:inline-block;">' +
+            '<option value="">All Categories</option>' +
+            "</select>",
+        );
+
+        //masukkan select filter ke datatable
+        $(".category-wrapper").append(categorySelect);
+
+        //masukkan category ke select filter
+        categories.forEach(function (category) {
+          $("#categoryFilter").append(
+            $("<option>", {
+              value: category,
+              text: category,
+            }),
+          );
+        });
+
+        //Filter Category
+        $("#categoryFilter").on("change", function () {
+          var category = $(this).val();
+
+          table.column(1).search(category).draw();
+        });
       });
     </script>
   </body>
