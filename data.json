@@ -71,6 +71,20 @@
   },
   {
     "category": "Apps",
+    "name": "MalwareBytes",
+    "description": "Malwarebytes is a powerful malware cleaner designed to rescue infected computers, working perfectly as a secondary scanner alongside your main antivirus.",
+    "link": "https://www.malwarebytes.com/",
+    "badge": "secondary"
+  },
+  {
+    "category": "Apps",
+    "name": "Bitdefender",
+    "description": "Bitdefender is a top-tier primary antivirus that provides comprehensive, real-time protection against advanced cyber threats without slowing down your system.",
+    "link": "https://www.bitdefender.com/en-us/consumer/free-antivirus?gad_source=1&gad_campaignid=23952510128&gclid=CjwKCAjwtKrUBhAhEiwAr77ZonQbpcGduifEdaxBKJFT1Wl0AAMibBEZZ8poy1D8Q-g0YzP_-rkdbBoCYBQQAvD_BwE",
+    "badge": "secondary"
+  },
+  {
+    "category": "Apps",
     "name": "Avira",
     "description": "Antivirus opensource",
     "link": "https://www.avira.com/en/downloads?srsltid=AfmBOoqGNHoKHLan7E2AeTj1XeQH69bTNTy9OusmvgrZXwgvpOGVAfKU#tab_a1_0",
