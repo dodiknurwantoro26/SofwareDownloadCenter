@@ -219,557 +219,38 @@
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
-      /* ===========================
-      DATA SOFTWARE
+      //Ambil data dari file json
+      fetch("data.json")
+        .then((response) => response.json())
+        .then((softwareList) => {
+          /* ===========================
+      LOOPING & SORTING DATA
       =========================== */
 
-      var softwareList = [
-        //Application
-        {
-          category: "Apps",
-          name: "PDFGear",
-          description: "PDF Editor open source",
-          link: "https://www.pdfgear.com/download/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "7zip",
-          description: "App opensource for compress and extract file",
-          link: "https://www.7-zip.org/download.html",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "UltraViewer",
-          description: "Remote desktop opensource multi window",
-          link: "https://www.ultraviewer.net/en/download.html",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "OpenVPN",
-          description: "VPN opensource",
-          link: "https://openvpn.net/client/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Putty",
-          description: "Remote Access linux ubuntu via command prompt",
-          link: "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "WinSCP",
-          description:
-            "open source free SFTP client, FTP client, WebDAV client, S3 client and SCP client and file manager for Windows.",
-          link: "https://winscp.net/eng/download.php",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "HWmonitor",
-          description:
-            "hardware monitoring program that reads PC systems main health sensors : voltages, temperatures, powers, currents, fans speed, utilizations, clock speeds",
-          link: "https://www.cpuid.com/downloads/hwmonitor/hwmonitor_1.28.exe?",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Zabbix",
-          description: "Monitoring Status Online Device PC",
-          link: "https://www.zabbix.com/download",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "WinDirStat",
-          description: "Folder Explorer details size",
-          link: "https://windirstat.net/download.html",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "OpenWebStart",
-          description:
-            "Running file format .jnlp dari IDRAC to view console and require install Java",
-          link: "https://openwebstart.com/download/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Avira",
-          description: "Antivirus opensource",
-          link: "https://www.avira.com/en/downloads?srsltid=AfmBOoqGNHoKHLan7E2AeTj1XeQH69bTNTy9OusmvgrZXwgvpOGVAfKU#tab_a1_0",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Rufus",
-          description:
-            " utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.",
-          link: "https://rufus.ie/en/#download",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Gdrive Desktop",
-          description: "Google Driver versi Desktop",
-          link: "https://ipv4.google.com/intl/id/drive/download/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Virtual Box",
-          description: "Cross-platform virtualization software",
-          link: "https://www.virtualbox.org/wiki/Downloads",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "LightShoot",
-          description: "Opensource screenshoot",
-          link: "https://app.prntscr.com/en/download.html",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Advanced IP Scanner",
-          description: "Reliable and free network scanner to analyze LAN.",
-          link: "https://www.advanced-ip-scanner.com/id/download/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "FreeFileSync",
-          description: "Opensource for symchronization",
-          link: "https://freefilesync.org/download.php",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Microsoft Edge",
-          description: "Browser",
-          link: "https://www.microsoft.com/id-id/edge/download?form=MA13FJ",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Firefox",
-          description: "Browser",
-          link: "https://www.firefox.com/id/?utm_campaign=SET_DEFAULT_BROWSER",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Chrome",
-          description: "Browser",
-          link: "https://www.google.com/intl/id_id/chrome/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "KMS",
-          description: "Crack MS Office",
-          link: "https://mega.nz/file/LMcWXKxL#hnI0TbaFxhb4kO35uH-bN0io0iFIuYrEs5BJyqzrsiY",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Adobe Photoshop CC 2019",
-          description: "Crack Editor Images",
-          link: "https://mega.nz/file/LMFDhAyS#MWF-krGGX3ZMNrGH6_EKxJUyRKtTAjkJ0LMQvwnXZKE",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Adobe Illustrator CC 2019",
-          description: "Crack Editor Images",
-          link: "https://mega.nz/file/HB0HHZ5K#5kiQpcAb8_vSDXbL4kadl-y-XHmPOtaoGw9Rz5bu8K4",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "PaperCut MobilityPrint",
-          description:
-            "Software Open Source solution that enables easy, native printing from BYOD (Bring Your Own Device) and mobile devices—including Android, iOS, Windows, macOS, and ChromeOS—to networked printers",
-          link: "https://www.papercut.com/products/free-software/mobility-print/#downloadSection",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Printer Epson",
-          description: "Driver Printer Epson",
-          link: "https://www.epson.co.id/Support/Printers/sh/s1",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Printer Canon",
-          description: "Driver Printer Canon",
-          link: "https://id.canon/id/support/search",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Hiren's BootCD PE",
-          description:
-            "toolkit recovery berbasis Windows 10 PE yang biasanya dipakai teknisi IT untuk: reset password Windows, memperbaiki Windows yang tidak bisa boot, backup data dari komputer yang rusak, clone HDD/SSD, cek kesehatan hardware. Tool ini dijalankan langsung dari flashdisk, jadi tidak perlu masuk Windows.",
-          link: "https://www.hirensbootcd.org/download/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "FortiClient VPN-only",
-          description: "Select FortiClient VPN-only for download file apps.",
-          link: "https://www.fortinet.com/support/product-downloads#vpn",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Offline NT Password & Registry Editor",
-          description:
-            "Tool for resetting Windows passwords and editing the Windows registry offline.",
-          link: "https://pogostick.net/~pnh/ntpasswd/",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "mkcert",
-          description:
-            "Generate locally-trusted development certificates. It requires no configuration and is as easy to use as mkcert -install && mkcert example.com",
-          link: "https://github.com/FiloSottile/mkcert/releases",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Duplicati",
-          description:
-            "Duplicati is a backup software to store encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
-          link: "https://github.com/duplicati/duplicati",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Ventoy",
-          description:
-            "Ventoy is a USB bootable tool that allows you to boot multiple ISO files from a single USB drive.",
-          link: "https://www.ventoy.net/en/download.html",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "3DP Net",
-          description:
-            "3DP Net is a driver update tool that helps you keep your network adapters up to date.",
-          link: "https://www.3dpchip.com/3dpchip/3dp/net_down_en.php",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "CloneZilla",
-          description:
-            "CloneZilla is a free and open-source disk cloning and recovery tool.",
-          link: "https://clonezilla.org/downloads.php",
-          badge: "secondary",
-        },
-        {
-          category: "Apps",
-          name: "Inno Setup",
-          description: "Inno Setup is a free installer for Windows programs.",
-          link: "https://jrsoftware.org/isdl.php/Inno-Setup-Downloads",
-          badge: "secondary",
-        },
+          softwareList.sort(function (a, b) {
+            // Urutkan berdasarkan Category
+            var categoryCompare = a.category.localeCompare(
+              b.category,
+              undefined,
+              {
+                sensitivity: "base",
+              },
+            );
 
-        //Database
-        {
-          category: "Database",
-          name: "SQL Express 2019",
-          description: "Database SQL",
-          link: "https://www.microsoft.com/en-us/download/details.aspx?id=101064",
-          badge: "info",
-        },
-        {
-          category: "Database",
-          name: "SQL Express 2022",
-          description: "Database SQL",
-          link: "https://www.microsoft.com/en-us/download/details.aspx?id=104781",
-          badge: "info",
-        },
-        {
-          category: "Database",
-          name: "SQL Server Management Studio (SSMS)",
-          description: "GUI Akses SQL Server",
-          link: "https://learn.microsoft.com/en-us/ssms/install/install",
-          badge: "info",
-        },
-        {
-          category: "Database",
-          name: "DBeaver",
-          description: "GUI Akses database server multiplatform",
-          link: "https://dbeaver.io/download/",
-          badge: "info",
-        },
-        {
-          category: "Database",
-          name: "SQL Backup Free",
-          description: "Apps SQL Backup opensource",
-          link: "https://sqlbackupfree.com/sql-backup-free/download/",
-          badge: "info",
-        },
-        {
-          category: "Database",
-          name: "MySQL Workbranch",
-          description: "Database MySQL",
-          link: "https://dev.mysql.com/downloads/installer/",
-          badge: "info",
-        },
+            //jika category sama, urutkan berdasarkan name
+            if (categoryCompare !== 0) {
+              return categoryCompare;
+            }
 
-        //Development
-        {
-          category: "Development",
-          name: "Visual Studio Code",
-          description: "Code Editor",
-          link: "https://code.visualstudio.com/download",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Wampserver",
-          description: "Server website apache and database",
-          link: "https://wampserver.aviatechno.net/",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Xampp",
-          description: "Server website apache and database",
-          link: "https://www.apachefriends.org/download.html",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Git",
-          description: "Projact Collaboration",
-          link: "https://git-scm.com/",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Composser",
-          description:
-            "Tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.",
-          link: "https://getcomposer.org/download/",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Php",
-          description: "Language Programming",
-          link: "https://www.php.net/downloads.php",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Python",
-          description: "Language Programming",
-          link: "https://www.python.org/downloads/",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Java",
-          description: "Language Programming",
-          link: "https://www.java.com/download/manual.jsp",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "AdminLTE",
-          description: "Template UI/UX website",
-          link: "https://github.com/ColorlibHQ/AdminLTE/releases",
-          badge: "warning",
-        },
-        {
-          category: "Development",
-          name: "Notepad ++",
-          description: "Code Editor opensource",
-          link: "https://notepad-plus-plus.org/downloads/",
-          badge: "warning",
-        },
+            return a.name.localeCompare(b.name, undefined, {
+              sensitivity: "base",
+            });
+          });
 
-        //Server
-        {
-          category: "Server",
-          name: "Docker",
-          description: "Container Platform",
-          link: "https://docker.com",
-          badge: "success",
-        },
-        {
-          category: "Server",
-          name: "Proxmox",
-          description: "Server Proxmox VM",
-          link: "https://www.proxmox.com/en/downloads",
-          badge: "success",
-        },
+          var html = "";
 
-        //Operating sistem
-        {
-          category: "OS",
-          name: "Windows 10",
-          description: "Istaller Windows 10",
-          link: "https://mega.nz/file/TUF1BCYK#xZJH-G9a9whE2Ff9iqF7QJKFYPl-Ir37Wb3gIhrGq98",
-          badge: "primary",
-        },
-        {
-          category: "OS",
-          name: "Gparted",
-          description:
-            "Install in flashdisk for booting, this apps free partition manager that enables you to resize, copy, and move partitions without data loss",
-          link: "https://gparted.org/download.php",
-          badge: "primary",
-        },
-        {
-          category: "OS",
-          name: "Ubuntu",
-          description: "Linux Desktop & Server",
-          link: "https://ubuntu.com/download",
-          badge: "primary",
-        },
-
-        {
-          category: "OS",
-          name: "Debian",
-          description: "Stable Linux Server",
-          link: "https://debian.org",
-          badge: "primary",
-        },
-
-        {
-          category: "OS",
-          name: "Linux System Rescue",
-          description:
-            "system rescue disk is a Linux system on a bootable CD-ROM or USB stick for administrating or repairing your system and data after a crash.",
-          link: "https://www.system-rescue.org/Download/",
-          badge: "primary",
-        },
-        {
-          category: "OS",
-          name: "Windows 7 Professional SP1 64-bit Fully Updated",
-          description: "Windows 7 Professional SP1 64-bit Fully Updated",
-          link: "https://archive.org/details/windows-7-professional-sp1-64-bit-fully-updated",
-          badge: "primary",
-        },
-        {
-          category: "OS",
-          name: "pfSense",
-          description: "Free and Open Source Firewall and Router",
-          link: "https://www.pfsense.org/download/",
-          badge: "primary",
-        },
-        //Office
-        {
-          category: "Office",
-          name: "MS Office 2016",
-          description: "MS Office 2016 + Crack",
-          link: "https://mega.nz/file/2U13BK6D#62s8hrMZlmCwnD1ST4mRzEQZIZ42RQ2qlQYcfVLjDsc",
-          badge: "danger",
-        },
-        {
-          category: "Office",
-          name: "LibreOffice",
-          description: "Office Suite",
-          link: "https://libreoffice.org",
-          badge: "danger",
-        },
-        {
-          category: "Tools & Links",
-          name: "Adobe Remove Background",
-          description: "Editing Remove Backgroud Online",
-          link: "https://www.adobe.com/express/feature/image/remove-background",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "Adobe Generated QR",
-          description: "Generated QR",
-          link: "https://new.express.adobe.com/tools/generate-qr-code",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "KMS online activation Windows 11",
-          description: "Link website for online activation Windows 11",
-          link: "https://pilarteknotama.co.id/blog/aktivasi-windows-11-permanen-tanpa-product-key/",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "License key Visual Studio 2005-2026 and Sql Server 2008-2016",
-          description:
-            "Link website for license key Visual Studio and Sql Server",
-          link: "https://gist.github.com/soyprofesor/1375f0894f293b519c418d0019845500",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "License key SQL Server 2022 Enterprise",
-          description:
-            "Link website for license key SQL Server 2022 Enterprise",
-          link: "https://gist.github.com/RajaKarmakar754/03141d5ee2e0a60d64cc4c20172bc762",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "License key Windows and Office",
-          description: "Link website for license key Windows and Office",
-          link: "https://gist.github.com/AssassinUKG/a6e5a82289d0bbd30bb53e359bc93258",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "Savefrom.net",
-          description:
-            "Link website for download video from youtube and social media",
-          link: "https://savefrom.co.id/",
-          badge: "linkapps",
-        },
-        {
-          category: "Tools & Links",
-          name: "YTMP4",
-          description: "Link to download YouTube videos as MP4",
-          link: "https://yt-mp4.net/",
-          badge: "linkapps",
-        },
-      ];
-
-      /* ===========================
-      LOOPING
-      =========================== */
-
-      //sort by category > name
-
-      softwareList.sort(function (a, b) {
-        // Urutkan berdasarkan Category
-        var categoryCompare = a.category.localeCompare(b.category, undefined, {
-          sensitivity: "base",
-        });
-
-        //jika category sama, urutkan berdasarkan name
-        if (categoryCompare !== 0) {
-          return categoryCompare;
-        }
-
-        return a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
-      });
-
-      var html = "";
-
-      softwareList.forEach(function (item, index) {
-        html += `
+          softwareList.forEach(function (item, index) {
+            html += `
 
       <tr>
 
@@ -801,64 +282,78 @@
       </tr>
 
       `;
-      });
+          });
 
-      document.getElementById("softwareTable").innerHTML = html;
+          document.getElementById("softwareTable").innerHTML = html;
 
-      /* ===========================
+          /* ===========================
       DATATABLE
       =========================== */
 
-      $(function () {
-        //data tabel
-        var table = $("#table").DataTable({
-          dom:
-            '<"dataTables-top"' +
-            '<"dataTables-left"l<"category-wrapper">>' +
-            '<"dataTables-right"f>' +
-            ">" +
-            "rtip",
+          $(function () {
+            //data tabel
+            var table = $("#table").DataTable({
+              dom:
+                '<"dataTables-top"' +
+                '<"dataTables-left"l<"category-wrapper">>' +
+                '<"dataTables-right"f>' +
+                ">" +
+                "rtip",
+            });
+
+            //category filter
+            var categories = [];
+
+            softwareList.forEach(function (item) {
+              if (!categories.includes(item.category)) {
+                categories.push(item.category);
+              }
+            });
+
+            //urutkan category
+            categories.sort();
+
+            //dropdwon filter
+            var categorySelect = $(
+              '<select id="categoryFilter" class="form-control form-control-sm">' +
+                '<option value="">All Categories</option>' +
+                "</select>",
+            );
+
+            //masukkan select filter ke datatable
+            $(".category-wrapper").append(categorySelect);
+
+            //masukkan category ke select filter
+            categories.forEach(function (category) {
+              $("#categoryFilter").append(
+                $("<option>", {
+                  value: category,
+                  text: category,
+                }),
+              );
+            });
+
+            //Filter Category
+            $("#categoryFilter").on("change", function () {
+              var category = $(this).val();
+
+              table.column(1).search(category).draw();
+            });
+          });
+        }) // Ini adalah penutup dari .then(softwareList => {
+        .catch((error) => {
+          // Ini untuk menampilkan pesan error di console jika data.json gagal dimuat
+          console.error("Gagal memuat data JSON:", error);
+
+          // Opsional: Tampilkan pesan ke user jika gagal
+          document.getElementById("softwareTable").innerHTML = `
+        <tr>
+          <td colspan="5" class="text-center text-danger">
+            Gagal memuat data. Pastikan Anda menjalankan file ini menggunakan Local Web Server (seperti XAMPP/Live Server).
+          </td>
+        </tr>
+      `;
         });
-
-        //category filter
-        var categories = [];
-
-        softwareList.forEach(function (item) {
-          if (!categories.includes(item.category)) {
-            categories.push(item.category);
-          }
-        });
-
-        //urutkan category
-        categories.sort();
-
-        //dropdwon filter
-        var categorySelect = $(
-          '<select id="categoryFilter" class="form-control form-control-sm">' +
-            '<option value="">All Categories</option>' +
-            "</select>",
-        );
-
-        //masukkan select filter ke datatable
-        $(".category-wrapper").append(categorySelect);
-
-        //masukkan category ke select filter
-        categories.forEach(function (category) {
-          $("#categoryFilter").append(
-            $("<option>", {
-              value: category,
-              text: category,
-            }),
-          );
-        });
-
-        //Filter Category
-        $("#categoryFilter").on("change", function () {
-          var category = $(this).val();
-
-          table.column(1).search(category).draw();
-        });
-      });
     </script>
   </body>
 </html>
