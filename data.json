@@ -258,6 +258,13 @@
     "link": "https://jrsoftware.org/isdl.php/Inno-Setup-Downloads",
     "badge": "secondary"
   },
+  {
+    "category": "Apps",
+    "name": "AutoTidy",
+    "description": "AutoTidy sits in the system tray and applies rules you write to the folders that always fill up — Downloads, Desktop, Screenshots. Match files by age, by name pattern, or both; move, copy, or delete them on a schedule. Every action is logged. Every run can be undone.",
+    "link": "https://autotidy.alpyalay.org/",
+    "badge": "secondary"
+  },
 
   {
     "category": "Database",
