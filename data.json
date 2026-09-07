@@ -272,6 +272,13 @@
     "link": "https://mega.nz/file/aUUwVA6R#9tIicfYWudSt0jUR6FeiqKZicsZSc--x1-3k6gSsRzA",
     "badge": "secondary"
   },
+  {
+    "category": "Apps",
+    "name": "Beszel",
+    "description": "Beszel (installer OS linux only) is a free and open-source software that allows you to create and manage your own personal knowledge base. It is designed to help you organize your thoughts, ideas, and notes in a structured way.",
+    "link": "https://www.beszel.dev/guide/getting-started",
+    "badge": "secondary"
+  },
 
   {
     "category": "Database",
