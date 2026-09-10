@@ -544,5 +544,26 @@
     "description": "Link to download YouTube videos as MP4",
     "link": "https://yt-mp4.net/",
     "badge": "linkapps"
+  },
+  {
+    "category": "Tools & Links",
+    "name": "Unsplash",
+    "description": "Link to download free high-resolution photos for personal and commercial use",
+    "link": "https://unsplash.com/s/photos/IT",
+    "badge": "linkapps"
+  },
+  {
+    "category": "Tools & Links",
+    "name": "Pixabay",
+    "description": "Link to download free images, videos, and music for personal and commercial use",
+    "link": "https://pixabay.com/",
+    "badge": "linkapps"
+  },
+  {
+    "category": "Tools & Links",
+    "name": "SVGRepo",
+    "description": "Link to download free SVG icons and illustrations",
+    "link": "https://www.svgrepo.com/",
+    "badge": "linkapps"
   }
 ]
