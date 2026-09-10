@@ -279,6 +279,20 @@
     "link": "https://www.beszel.dev/guide/getting-started",
     "badge": "secondary"
   },
+  {
+    "category": "Apps",
+    "name": "VirtualHere USB Server & Client",
+    "description": "Traditionally USB devices needed to be plugged directly into your computer to be used. With VirtualHere this is no longer required, the network itself becomes the cable transmitting USB signals (also known as USB over IP, USB/IP, USB over WiFi, USB over Ethernet, USB Device Server).",
+    "link": "https://www.virtualhere.com/usb_client_software",
+    "badge": "secondary"
+  },
+  {
+    "category": "Apps",
+    "name": "PrtEasyServer",
+    "description": "PrtEasyServer is a C++ Windows app that enables client PCs to install shared printers via a RAW 9100 / TCP-IP port, bypassing SMB sharing and password prompts.",
+    "link": "https://github.com/Terence0816/Windows-PrtEasyServer/releases",
+    "badge": "secondary"
+  },
 
   {
     "category": "Database",
