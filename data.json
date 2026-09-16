@@ -293,6 +293,13 @@
     "link": "https://github.com/Terence0816/Windows-PrtEasyServer/releases",
     "badge": "secondary"
   },
+  {
+    "category": "Apps",
+    "name": "Joplin",
+    "description": "Apps Desktop free and open-source note-taking and to-do application.",
+    "link": "https://joplinapp.org/",
+    "badge": "secondary"
+  },
 
   {
     "category": "Database",
