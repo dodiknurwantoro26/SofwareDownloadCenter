@@ -307,6 +307,13 @@
     "link": "https://joplinapp.org/",
     "badge": "secondary"
   },
+  {
+    "category": "Apps",
+    "name": "Certify The Web",
+    "description": "Certify The Web is a Windows application for managing SSL/TLS certificates from Let's Encrypt and other ACME certificate authorities.",
+    "link": "https://certifytheweb.com/",
+    "badge": "secondary"
+  },
 
   {
     "category": "Database",
