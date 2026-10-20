@@ -314,6 +314,13 @@
     "link": "https://certifytheweb.com/",
     "badge": "secondary"
   },
+  {
+    "category": "Apps",
+    "name": "Download SSL Mkcert",
+    "description": "Download_SSL_mkcert.bat is a batch script that automates the process of downloading and installing mkcert, a tool for creating locally-trusted development certificates.",
+    "link": "https://mega.nz/file/SMdEFaTL#FJC-fufludlr9lcKsnyD6WfAa6gSpHblgNW67xNwAK0",
+    "badge": "secondary"
+  },
 
   {
     "category": "Database",
